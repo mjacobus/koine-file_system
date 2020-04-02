@@ -15,7 +15,9 @@ SimpleCov.start do
   add_filter %r{^/spec/}
 end
 
-Coveralls.wear!
+if ENV['CI']
+  Coveralls.wear!
+end
 
 require 'koine/file_system'
 
