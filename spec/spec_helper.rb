@@ -15,6 +15,8 @@ SimpleCov.start do
   add_filter %r{^/spec/}
 end
 
+Coveralls.wear!
+
 require 'koine/file_system'
 
 RSpec.configure do |config|
