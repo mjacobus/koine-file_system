@@ -1,22 +1,15 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'simplecov'
-require 'coveralls'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
-  [
-    SimpleCov::Formatter::HTMLFormatter,
-    Coveralls::SimpleCov::Formatter
-  ]
-)
-
-SimpleCov.start do
-  add_filter %r{^/spec/}
-end
 
 if ENV['CI']
+  require 'coveralls'
   Coveralls.wear!
+else
+  require 'simplecov'
+  SimpleCov.start do
+    add_filter %r{^/spec/}
+  end
 end
 
 require 'koine/file_system'
