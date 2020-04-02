@@ -1,4 +1,6 @@
-require "koine/file_system/version"
+# frozen_string_literal: true
+
+require 'koine/file_system/version'
 
 module Koine
   module FileSystem

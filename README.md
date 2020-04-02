@@ -2,6 +2,10 @@
 
 This will [hopefully] be a file system abstraction as good as the [PHP League's Flysystem](https://github.com/thephpleague/flysystem).
 
+[![Build Status](https://travis-ci.org/mjacobus/koine-file_system.svg?branch=master)](https://travis-ci.org/mjacobus/koine-file_system)
+[![Coverage Status](https://coveralls.io/repos/github/mjacobus/koine-file_system/badge.svg?branch=master)](https://coveralls.io/github/mjacobus/koine-file_system?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ae41e3facbadaabaa463/maintainability)](https://codeclimate.com/github/mjacobus/koine-file_system/maintainability)
+
 ## Installation
 
 Add this line to your application's Gemfile:
