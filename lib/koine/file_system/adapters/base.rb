@@ -72,6 +72,12 @@ module Koine
         def list(_path, recursive: false)
           raise NotImplementedError
         end
+
+        private
+
+        def raise_not_found(file)
+          raise FileNotFound, "File not found: #{file}"
+        end
       end
       # rubocop:enable Lint/UnusedMethodArgument
     end

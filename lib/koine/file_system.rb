@@ -8,5 +8,6 @@ require 'koine/file_system/adapters/local'
 module Koine
   module FileSystem
     class Error < StandardError; end
+    class FileNotFound < Error; end
   end
 end
