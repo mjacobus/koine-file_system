@@ -2,6 +2,7 @@
 
 require 'koine/file_system/version'
 require 'koine/file_system/file_system'
+require 'koine/file_system/path_sanitizer'
 require 'koine/file_system/adapters/base'
 require 'koine/file_system/adapters/local'
 
