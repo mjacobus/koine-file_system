@@ -30,7 +30,7 @@ module Koine
           path = full_path(path)
           ensure_target_dir(path)
           File.open(path, 'w') do |f|
-            f.puts(content)
+            f.write(content)
           end
         end
 
