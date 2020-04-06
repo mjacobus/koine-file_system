@@ -8,10 +8,10 @@ RSpec.describe Koine::FileSystem::PathSanitizer do
   describe '#sanitize' do
     SAMPLES = {
       '.././foo/bar/.././../../file.txt' => 'foo/bar/file.txt'
-    }
+    }.freeze
 
     SAMPLES.each do |key, value|
-      it "transforms #{key} in #{value}"do
+      it "transforms #{key} in #{value}" do
         expect(sanitizer.sanitize(key)).to eq(value)
       end
     end

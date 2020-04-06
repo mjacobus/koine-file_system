@@ -5,6 +5,7 @@ require 'fileutils'
 module Koine
   module FileSystem
     module Adapters
+      # rubocop:disable Lint/UnusedMethodArgument
       class Local < Base
         def initialize(root:, path_sanitizer: PathSanitizer.new)
           @root = root
@@ -68,6 +69,7 @@ module Koine
         # def list_contents(_path)
         # def list(_path, recursive: false)
       end
+      # rubocop:enable Lint/UnusedMethodArgument
     end
   end
 end
