@@ -18,7 +18,6 @@ module Koine
             content = file.read
             file.close
             return content
-            # return File.read(full_path(path))
           end
           raise_not_found(path)
         end
@@ -52,12 +51,7 @@ module Koine
           @path_sanitizer.sanitize(path)
         end
 
-        # def read_stream(_path)
-        # def write(_path, _contents, options: {})
-        # def write_stream(_path, _contents, options: {})
         # def update(_path, _contents, options: {})
-        # def update_stream(_path, _contents, options: {})
-        # def has?(_path)
         # def delete(_path)
         # def read_and_delete(_path)
         # def rename(_from, _to)
@@ -66,7 +60,6 @@ module Koine
         # def size(_path)
         # def create_dir(_path)
         # def delete_dir(_path)
-        # def list_contents(_path)
         # def list(_path, recursive: false)
       end
       # rubocop:enable Lint/UnusedMethodArgument
