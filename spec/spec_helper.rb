@@ -13,6 +13,9 @@ else
 end
 
 require 'koine/file_system'
+require 'rspec'
+
+FIXTURES_PATH = File.expand_path('fixtures', __dir__)
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
