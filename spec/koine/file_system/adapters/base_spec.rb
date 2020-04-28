@@ -74,10 +74,6 @@ RSpec.describe Koine::FileSystem::Adapters::Base do
     end.to raise_error(NotImplementedError)
 
     expect do
-      adapter.list_contents(path)
-    end.to raise_error(NotImplementedError)
-
-    expect do
       adapter.list(path, recursive: false)
     end.to raise_error(NotImplementedError)
   end
