@@ -5,7 +5,9 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in koine-file_system.gemspec
 gemspec
 
+gem 'awesome_print'
 gem 'coveralls', '~> 0.8.23'
+gem 'dotenv'
 gem 'rake', '~> 12.0'
 gem 'reek'
 gem 'rspec', '~> 3.0'

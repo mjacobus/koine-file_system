@@ -186,7 +186,7 @@ RSpec.describe Koine::FileSystem::Adapters::Local do
       map = result.map { |r| [r[:path], r[:timestamp].class.to_s] }.sort
 
       expected = [
-        ['folder1', 'Time'],
+        %w[folder1 Time],
         ['sample.png', 'Time'],
         ['sample.txt', 'Time']
       ].sort
