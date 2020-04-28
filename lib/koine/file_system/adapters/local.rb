@@ -94,16 +94,6 @@ module Koine
           parts << '*'
           parts.join('/')
         end
-
-        # def update(_path, _contents, options: {})
-        # def delete(_path)
-        # def read_and_delete(_path)
-        # def rename(_from, _to)
-        # def copy(_from, _to)
-        # def mime_type(_path)
-        # def size(_path)
-        # def create_dir(_path)
-        # def delete_dir(_path)
       end
       # rubocop:enable Lint/UnusedMethodArgument
     end

@@ -183,12 +183,12 @@ RSpec.describe Koine::FileSystem::Adapters::Local do
     it 'returns file timestamps' do
       result = adapter.list
 
-      map = result.map { |r| [r[:path], r[:timestamp].utc.to_s] }.sort
+      map = result.map { |r| [r[:path], r[:timestamp].class.to_s] }.sort
 
       expected = [
-        ['folder1', '2020-04-28 18:25:28 UTC'],
-        ['sample.png', '2020-04-28 18:37:42 UTC'],
-        ['sample.txt', '2020-04-28 17:51:01 UTC']
+        ['folder1', 'Time'],
+        ['sample.png', 'Time'],
+        ['sample.txt', 'Time']
       ].sort
 
       expect(map).to eq(expected)
