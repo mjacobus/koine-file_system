@@ -34,7 +34,35 @@ module Koine
           end
         end
 
+        def list(dir = '', recursive: false)
+          Dir[create_list_pattern(dir, recursive)].map do |file|
+            metadata_for(file)
+          end
+        end
+
+        def size(path)
+          File.size(full_path(path))
+        end
+
         private
+
+        # rubocop:disable Metrics/MethodLength
+        def metadata_for(file)
+          relative_path = file.sub("#{@root}/", '')
+          type = File.directory?(file) ? 'dir' : 'file'
+          filename = File.basename(file)
+
+          {
+            path: relative_path,
+            type: type,
+            extension: type == 'dir' ? nil : filename.split('.').last,
+            filename: filename,
+            dirname: File.dirname(relative_path),
+            timestamp: File.mtime(file),
+            size: size(relative_path)
+          }
+        end
+        # rubocop:enable Metrics/MethodLength
 
         def full_path(path)
           File.expand_path(sanitize_path(path), @root)
@@ -51,6 +79,22 @@ module Koine
           @path_sanitizer.sanitize(path)
         end
 
+        def create_list_pattern(dir, recursive)
+          dir = sanitize_path(dir)
+          parts = [@root]
+
+          unless dir.empty?
+            parts << dir
+          end
+
+          if recursive
+            parts << '**'
+          end
+
+          parts << '*'
+          parts.join('/')
+        end
+
         # def update(_path, _contents, options: {})
         # def delete(_path)
         # def read_and_delete(_path)
@@ -60,7 +104,6 @@ module Koine
         # def size(_path)
         # def create_dir(_path)
         # def delete_dir(_path)
-        # def list(_path, recursive: false)
       end
       # rubocop:enable Lint/UnusedMethodArgument
     end

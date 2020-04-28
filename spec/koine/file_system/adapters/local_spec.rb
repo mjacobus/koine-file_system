@@ -80,4 +80,118 @@ RSpec.describe Koine::FileSystem::Adapters::Local do
       expect(copy).to eq(original)
     end
   end
+
+  describe '#list' do
+    let(:adapter) { described_class.new(root: "#{FIXTURES_PATH}/list_sandbox/") }
+
+    it 'lists primary contents without args' do
+      result = adapter.list
+
+      paths = result.map { |r| r[:path] }.sort
+
+      expect(paths).to eq(['folder1', 'sample.png', 'sample.txt'].sort)
+    end
+
+    it 'lists folder contents without recursion' do
+      result = adapter.list('folder1')
+
+      paths = result.map { |r| r[:path] }.sort
+
+      expect(paths).to eq(['folder1/folder2', 'folder1/sample.png'].sort)
+    end
+
+    it 'lists folder contents with recursion' do
+      result = adapter.list('folder1', recursive: true)
+
+      paths = result.map { |r| r[:path] }.sort
+
+      expect(paths).to eq([
+        'folder1/folder2',
+        'folder1/sample.png',
+        'folder1/folder2/sample.txt'
+      ].sort)
+    end
+
+    it 'returns type' do
+      result = adapter.list
+
+      map = result.map { |r| [r[:path], r[:type]] }.sort
+
+      expected = [
+        %w[folder1 dir],
+        ['sample.png', 'file'],
+        ['sample.txt', 'file']
+      ].sort
+
+      expect(map).to eq(expected)
+    end
+
+    it 'returns extensions' do
+      result = adapter.list
+
+      map = result.map { |r| [r[:path], r[:extension]] }.sort
+
+      expected = [
+        ['folder1', nil],
+        ['sample.png', 'png'],
+        ['sample.txt', 'txt']
+      ].sort
+
+      expect(map).to eq(expected)
+    end
+
+    it 'returns filenames' do
+      result = adapter.list('folder1')
+
+      map = result.map { |r| [r[:path], r[:filename]] }.sort
+
+      expected = [
+        ['folder1/folder2', 'folder2'],
+        ['folder1/sample.png', 'sample.png']
+      ].sort
+
+      expect(map).to eq(expected)
+    end
+
+    it 'returns dirname' do
+      result = adapter.list('folder1')
+
+      map = result.map { |r| [r[:path], r[:dirname]] }.sort
+
+      expected = [
+        ['folder1/folder2', 'folder1'],
+        ['folder1/sample.png', 'folder1']
+      ].sort
+
+      expect(map).to eq(expected)
+    end
+
+    it 'returns file sizes' do
+      result = adapter.list
+
+      map = result.map { |r| [r[:path], r[:size]] }.sort
+
+      expected = [
+        ['folder1', 4096],
+        ['sample.png', 85_874],
+        ['sample.txt', 40]
+      ].sort
+
+      expect(map).to eq(expected)
+    end
+
+    it 'returns file timestamps' do
+      result = adapter.list
+
+      map = result.map { |r| [r[:path], r[:timestamp].utc.to_s] }.sort
+
+      expected = [
+        ['folder1', '2020-04-28 18:25:28 UTC'],
+        ['sample.png', '2020-04-28 18:37:42 UTC'],
+        ['sample.txt', '2020-04-28 17:51:01 UTC']
+      ].sort
+
+      expect(map).to eq(expected)
+    end
+  end
 end
