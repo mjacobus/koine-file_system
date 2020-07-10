@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Koine::FileSystem::FileSystem do
+RSpec.describe Koine::Filesystem::Filesystem do
   subject(:fs) { described_class.new(adapter) }
 
   let(:adapter) { instance_double(described_class) }

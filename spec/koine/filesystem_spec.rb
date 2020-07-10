@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-RSpec.describe Koine::FileSystem do
+RSpec.describe Koine::Filesystem do
   it 'has a version number' do
-    expect(Koine::FileSystem::VERSION).not_to be nil
+    expect(Koine::Filesystem::VERSION).not_to be nil
   end
 end

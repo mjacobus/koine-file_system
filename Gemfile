@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in koine-file_system.gemspec
+# Specify your gem's dependencies in koine-filesystem.gemspec
 gemspec
 
 gem 'coveralls', '~> 0.8.23'

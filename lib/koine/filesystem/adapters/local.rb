@@ -3,7 +3,7 @@
 require 'fileutils'
 
 module Koine
-  module FileSystem
+  module Filesystem
     module Adapters
       # rubocop:disable Lint/UnusedMethodArgument
       class Local < Base

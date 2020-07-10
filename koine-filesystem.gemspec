@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'lib/koine/file_system/version'
+require_relative 'lib/koine/filesystem/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'koine-file_system'
-  spec.version       = Koine::FileSystem::VERSION
+  spec.name          = 'koine-filesystem'
+  spec.version       = Koine::Filesystem::VERSION
   spec.authors       = ['Marcelo Jacobus']
   spec.email         = ['marcelo.jacobus@gmail.com']
 

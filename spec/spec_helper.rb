@@ -12,7 +12,7 @@ else
   end
 end
 
-require 'koine/file_system'
+require 'koine/filesystem'
 require 'rspec'
 
 FIXTURES_PATH = File.expand_path('fixtures', __dir__)

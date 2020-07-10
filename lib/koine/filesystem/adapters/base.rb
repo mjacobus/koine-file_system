@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Koine
-  module FileSystem
+  module Filesystem
     module Adapters
       # rubocop:disable Lint/UnusedMethodArgument
       class Base

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module Koine
-  module FileSystem
+  module Filesystem
     # Inspired on
     # https://flysystem.thephpleague.com/v1/docs/usage/filesystem-api/
-    class FileSystem
+    class Filesystem
       def initialize(adapter)
         @adapter = adapter
       end
