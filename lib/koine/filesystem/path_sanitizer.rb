@@ -3,7 +3,7 @@
 require 'fileutils'
 
 module Koine
-  module FileSystem
+  module Filesystem
     class PathSanitizer
       def sanitize(path)
         path.to_s.gsub('/../', '/').gsub(%r{\.?\./}, '')

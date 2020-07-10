@@ -3,7 +3,7 @@
 require 'spec_helper'
 require 'digest'
 
-RSpec.describe Koine::FileSystem::Adapters::Local do
+RSpec.describe Koine::Filesystem::Adapters::Local do
   let(:adapter) { described_class.new(root: FIXTURES_PATH) }
 
   before do
@@ -15,7 +15,7 @@ RSpec.describe Koine::FileSystem::Adapters::Local do
       expect do
         adapter.read('unexisting')
       end.to raise_error(
-        Koine::FileSystem::FileNotFound,
+        Koine::Filesystem::FileNotFound,
         'File not found: unexisting'
       )
     end
@@ -186,7 +186,7 @@ RSpec.describe Koine::FileSystem::Adapters::Local do
       map = result.map { |r| [r[:path], r[:timestamp].class.to_s] }.sort
 
       expected = [
-        ['folder1', 'Time'],
+        %w[folder1 Time],
         ['sample.png', 'Time'],
         ['sample.txt', 'Time']
       ].sort

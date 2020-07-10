@@ -1,4 +1,4 @@
-# Koine::FileSystem
+# Koine::Filesystem
 
 This will [hopefully] be a file system abstraction as good as the [PHP League's Flysystem](https://github.com/thephpleague/flysystem).
 
@@ -11,7 +11,7 @@ This will [hopefully] be a file system abstraction as good as the [PHP League's 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'koine-file_system'
+gem 'koine-filesystem'
 ```
 
 And then execute:
@@ -20,7 +20,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install koine-file_system
+    $ gem install koine-filesystem
 
 ## Usage
 
@@ -43,4 +43,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Koine::FileSystem project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/mjacobus/koine-file_system/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Koine::Filesystem project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/mjacobus/koine-file_system/blob/master/CODE_OF_CONDUCT.md).

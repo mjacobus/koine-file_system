@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Koine::FileSystem::Adapters::Base do
+RSpec.describe Koine::Filesystem::Adapters::Base do
   subject(:adapter) { described_class.new }
 
   let(:path) { 'foo' }

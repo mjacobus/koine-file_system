@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Koine::FileSystem::PathSanitizer do
+RSpec.describe Koine::Filesystem::PathSanitizer do
   subject(:sanitizer) { described_class.new }
 
   describe '#sanitize' do
