@@ -22,9 +22,37 @@ Or install it yourself as:
 
     $ gem install koine-filesystem
 
+
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+adapter = Koine::Filesystem::Adapters::Local.new(
+  root: '/users/my_user/sandbox'
+)
+
+fs = Koine::Filesystem::Filesystem.new(adapter)
+
+files = fs.list('files', recursive: true)
+
+# it returns a collectin of hash. But I am thingking of either returning a PORO file object
+# or returning an object that carries the file system along with it so it can do stuff like
+
+files.each do |file|
+  file.directory?
+  file.path
+  file.name
+  file.extension
+  file.read
+  file.read_stream
+  file.upload_to(other_fs, path: 'foo/bar/baz.txt')
+end
+
+```
+
+## [Partially] Supported adapters
+
+- Local
+- [Sftp](https://github.com/mjacobus/koine-filesystem-adapters-sftp)
 
 ## Development
 
