@@ -1,6 +1,10 @@
 Change log
 -----------------
 
+### 0.1.1
+
+Same as 0.1.0, only avoiding collisions due to the name change
+
 ### 0.1.0
 
 Minimal Local Filesystem Storage. Many methods are not implemented yet
